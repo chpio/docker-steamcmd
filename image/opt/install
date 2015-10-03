@@ -20,6 +20,9 @@ chmod 555 /opt/steamcmd/* -R
 # update steamcmd
 ./steamcmd.sh +quit
 
+# add a "steam" user and group
+adduser --system --group steam
+
 # clean up
 apt-get purge -y $DEPS_BUILD
 apt-get autoremove -y
