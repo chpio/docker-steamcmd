@@ -1,6 +1,6 @@
 FROM debian:latest
 
-ADD image /
-RUN /opt/install
+ADD ./fs /
+RUN /tmp/install
 
 ENV PATH /opt/steamcmd:$PATH
