@@ -2,12 +2,11 @@
 set -e
 
 # deps
-DEPS="lib32gcc1"
 DEPS_BUILD="wget ca-certificates"
 
 # install deps
 apt-get update
-apt-get install -y $DEPS $DEPS_BUILD
+apt-get install -y $DEPS_BUILD
 
 # download & install steamcmd
 mkdir -p /opt/steamcmd
