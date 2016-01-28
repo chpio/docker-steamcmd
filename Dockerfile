@@ -3,7 +3,7 @@ FROM debian:jessie
 RUN { \
 	set -ex; \
 	apt-get update; \
-	apt-get install -y lib32gcc1; \
+	apt-get install --no-install-recommends -y lib32gcc1 ca-certificates; \
 	rm -r /var/lib/apt/lists/*; \
 }
 
@@ -12,7 +12,7 @@ ENV PATH /opt/steamcmd:$PATH
 RUN { \
 	set -ex; \
 	apt-get update; \
-	apt-get install -y wget ca-certificates; \
+	apt-get install -y wget; \
 
 	# install steamcmd
 	mkdir -p /opt/steamcmd; \
@@ -25,7 +25,7 @@ RUN { \
 	steamcmd.sh +quit; \
 
 	# clean up
-	apt-get purge -y wget ca-certificates; \
+	apt-get purge -y wget; \
 	apt-get autoremove -y; \
 	apt-get clean; \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/Steam/logs; \
