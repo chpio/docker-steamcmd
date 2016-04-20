@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM chpio/gosu:jessie
 
 RUN { \
 	set -ex; \
